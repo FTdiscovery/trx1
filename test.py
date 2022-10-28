@@ -6,7 +6,7 @@ Trying to scrape from newsfilter.io
 3. starts parsing, rn it parses around 3 months of data. the parsed data is VERY UNCLEAN we will need to fix it
 """
 
-from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
 from datetime import date, timedelta, datetime, time
 from alpaca_trade_api import REST, Stream
 import bs4 as bs
@@ -24,11 +24,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from undetected_chromedriver import Chrome
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 if __name__ == '__main__':
     driver: Chrome = uc.Chrome()
     # driver.get('https://accounts.google.com/')
-    YOUR_EMAIL = ''
-    YOUR_PASSWORD = ''
+    YOUR_EMAIL = os.getenv('GOOGLE_EMAIL')
+    YOUR_PASSWORD = os.getenv('GOOGLE_PASSWORD')
     #
     # # add email
     # driver.find_element(By.XPATH, '//*[@id="identifierId"]').send_keys(YOUR_EMAIL)

@@ -1,0 +1,7 @@
+undetected_chromedriver==3.1.6
+selenium==4.5.0
+openai==0.24.0
+alpaca==1.0.0
+alpaca-trade-api==1.5.1
+beautifulsoup4==4.10.0
+newsapi==0.1.1
